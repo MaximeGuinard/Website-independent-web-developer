@@ -1,0 +1,31 @@
+# o2switch pagespeed start / DO NOT REMOVE OR EDIT
+<IfModule pagespeed_module>
+ModPagespeed on
+ModPagespeedRewriteLevel PassThrough
+ModPagespeedEnableFilters add_head,canonicalize_javascript_libraries,combine_css,combine_javascript,convert_meta_tags,dedup_inlined_images,inline_css,inline_javascript,rewrite_javascript,move_css_above_scripts,move_css_to_head,insert_dns_prefetch,remove_comments,remove_quotes,rewrite_images,strip_image_meta_data,sprite_images
+</IfModule>
+# o2switch pagespeed end / DO NOT REMOVE OR EDIT
+<IfModule mod_headers.c>
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header always append X-Frame-Options SAMEORIGIN
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header always set Referrer-Policy "no-referrer"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On 
+RewriteCond %{HTTPS} off 
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+ErrorDocument 404 https://developpeur-web-independant.fr/
+</IfModule>
+RewriteCond %{HTTP_HOST} ^developpeur-web-independant\.fr$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.developpeur-web-independant\.fr$

@@ -1,0 +1,34 @@
+User-agent: *
+Disallow: /brouillon/
+
+# Open Site Explorer
+User-agent: rogerbot
+Disallow: /
+
+# Ahrefs.com
+user-agent: AhrefsBot
+Disallow: /
+
+# domaintools.com
+User-agent: SurveyBot
+Disallow: /
+
+User-agent: Updownerbot
+Disallow: /
+
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: archive-fr.com
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: webmeupbot
+Disallow: /
+
+User-agent: spbot
+Disallow: /
+
+Sitemap: https://developpeur-web-independant.fr/sitemap.xml
